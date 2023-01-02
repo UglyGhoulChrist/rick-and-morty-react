@@ -8,17 +8,16 @@ import Button from "./Button";
 function Card(character) {
   const { name, image } = character;
   const [showModal, setShowModal] = useState(false);
-  const closeModal = () => setShowModal(false);
-  const openModal = () => setShowModal(true);
+  const toggleModal = () => setShowModal(!showModal);
 
   return (
     <div className={styles.card}>
       <Picture name={name} image={image} />
       <div className={styles.data}>
         <Title title={name} />
-        <Button text="Подробнее" onClick={openModal} />
+        <Button text="Подробнее" onClick={toggleModal} />
       </div>
-      <Modal {...character} closeModal={closeModal} showModal={showModal} />
+      <Modal {...character} closeModal={toggleModal} showModal={showModal} />
     </div>
   );
 }

@@ -39,8 +39,8 @@ function Cards() {
 
       {(btnPrev || btnNext) && (
         <div className={styles.buttons}>
-          {btnPrev && <Button onClick={() => setURL(btnPrev)} text="prev" />}
-          {btnNext && <Button onClick={() => setURL(btnNext)} text="next" />}
+          {btnPrev && <Button onClick={() => setURL(btnPrev)} text="Назад" />}
+          {btnNext && <Button onClick={() => setURL(btnNext)} text="Вперёд" />}
         </div>
       )}
     </>
