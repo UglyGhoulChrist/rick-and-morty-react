@@ -6,8 +6,10 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .7);
     overflow: scroll;
+    // display: grid;
+    // place-items: center;
 }
 
 // Animated modal Start
@@ -34,11 +36,11 @@
 // Animated modal End
 .content {
     margin: auto;
+    // width: 100%;
     max-width: 400px;
     background: white;
     border-radius: 0.25rem;
 }
-
 
 .header {
     padding: 1rem;
@@ -52,7 +54,7 @@
 .close {
     font-size: 2rem;
     font-weight: 500;
-    background-color: inherit;
+    background-color: initial;
     cursor: pointer;
 }
 
@@ -61,22 +63,16 @@
     border-bottom: 1px solid #dee2e6;
 }
 
-.modified {
-    margin-bottom: 1rem;
-    color: #6c757d;
-    line-height: 1.5rem;
-}
-
-.h5 {
+.created {
     margin-bottom: .5rem;
-    color: #212529;
-    font-weight: 500;
-    font-size: 1.25rem;
+    text-align: end;
+    font-size: 0.75rem;
+    color: #6c757d;
+    line-height: 1rem;
 }
 
-.description {
-    line-height: 1.5rem;
-}
+
+
 
 .footer {
     padding: 1rem;

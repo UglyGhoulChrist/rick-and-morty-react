@@ -20,9 +20,7 @@ function Cards() {
         setBtnPrev(data.info.prev);
         setBtnNext(data.info.next);
         setCharacters(characters);
-        // ToDo Dev
-        console.log(characters);
-        // ToDo Сделать прокрутку наверх
+        //Прокрутка наверх
         window.scrollTo(0, 0);
       })
       .catch((error) => setError(error.message))

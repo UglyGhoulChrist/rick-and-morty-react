@@ -3,11 +3,28 @@ import styles from "./Modal.module.scss";
 import Picture from "./Picture";
 import Button from "./Button";
 
-function Modal({ name, image, modified, description, closeModal, showModal }) {
+function Modal({
+  name,
+  image,
+  created,
+  status,
+  species,
+  gender,
+  closeModal,
+  showModal,
+}) {
   return (
     <div className={`${styles.modal} ${!showModal && styles.hidden}`}>
       <div className={styles.content}>
-        <div className={styles.header}>
+        <div
+          style={
+            (status === "Alive" && { backgroundColor: "#00800050" }) ||
+            (status === "Dead" && { backgroundColor: "#80000050" }) || {
+              backgroundColor: "#00000050",
+            }
+          }
+          className={styles.header}
+        >
           <Title title={name} />
           <button onClick={closeModal} className={styles.close}>
             &times;
@@ -16,9 +33,10 @@ function Modal({ name, image, modified, description, closeModal, showModal }) {
 
         <div className={styles.body}>
           <Picture name={name} image={image} />
-          <p className={styles.modified}>{modified}</p>
-          <h5 className={styles.h5}>Описание:</h5>
-          <p className={styles.description}>{description}</p>
+          <p className={styles.created}>created: {created.slice(0, 10)}</p>
+          <p>
+            {species} ({gender})
+          </p>
         </div>
         <div className={styles.footer}>
           <Button text="Закрыть" onClick={closeModal} />
