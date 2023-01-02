@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    z-index: 2;
+    padding: 1rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    overflow: scroll;
+}
+
+// Animated modal Start
+.modal {
+    transition: all .5s ease 0s;
+    opacity: 1;
+    visibility: visible;
+
+    >div {
+        transition: all .5s ease 0s;
+        transform: translateY(0);
+    }
+}
+
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+
+    >div {
+        transform: translateY(-20vh);
+    }
+}
+
+// Animated modal End
+.content {
+    margin: auto;
+    max-width: 400px;
+    background: white;
+    border-radius: 0.25rem;
+}
+
+
+.header {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.close {
+    font-size: 2rem;
+    font-weight: 500;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.body {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modified {
+    margin-bottom: 1rem;
+    color: #6c757d;
+    line-height: 1.5rem;
+}
+
+.h5 {
+    margin-bottom: .5rem;
+    color: #212529;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.description {
+    line-height: 1.5rem;
+}
+
+.footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}

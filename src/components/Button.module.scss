@@ -1,0 +1,25 @@
+.button {
+    border-radius: .2rem;
+    width: fit-content;
+    padding: .25rem .5rem;
+    background-color: #6c757d;
+    color: #fff;
+    font-size: .875rem;
+    transition: all .15s ease-in-out 0s;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #212529;
+        }
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+
+    &_notLink {
+        background-color: #fff;
+        color: #6c757d;
+    }
+}
