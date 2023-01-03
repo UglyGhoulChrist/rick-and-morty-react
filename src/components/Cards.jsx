@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 import Card from "./Card";
 import styles from "./Cards.module.scss";
+import Modal from "./Modal";
 import Title from "./Title";
 
 function Cards() {
@@ -11,7 +12,11 @@ function Cards() {
   const [btnNext, setBtnNext] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [id, setId] = useState(null);
 
+  document.body.style.overflow = id ? "hidden" : "";
+
+  let character = characters.find((character) => character.id === id);
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
@@ -32,17 +37,17 @@ function Cards() {
         (error && <Title title={error} />) || (
           <div className={styles.list}>
             {characters.map((character) => (
-              <Card {...character} key={character.id} />
+              <Card setId={setId} {...character} key={character.id} />
             ))}
           </div>
         )}
-
       {(btnPrev || btnNext) && (
         <div className={styles.buttons}>
           {btnPrev && <Button onClick={() => setURL(btnPrev)} text="Назад" />}
           {btnNext && <Button onClick={() => setURL(btnNext)} text="Вперёд" />}
         </div>
       )}
+      <Modal {...character} id={id} setId={setId} />
     </>
   );
 }

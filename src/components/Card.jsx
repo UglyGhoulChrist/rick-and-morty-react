@@ -1,23 +1,21 @@
-import { useState } from "react";
-import Modal from "./Modal";
 import Title from "./Title";
 import styles from "./Card.module.scss";
 import Picture from "./Picture";
 import Button from "./Button";
 
-function Card(character) {
-  const { name, image } = character;
-  const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal(!showModal);
-
+function Card({ id, name, image, setId }) {
   return (
     <div className={styles.card}>
       <Picture name={name} image={image} />
       <div className={styles.data}>
         <Title title={name} />
-        <Button text="Подробнее" onClick={toggleModal} />
+        <Button
+          text="Подробнее"
+          onClick={() => {
+            setId(id);
+          }}
+        />
       </div>
-      <Modal {...character} closeModal={toggleModal} showModal={showModal} />
     </div>
   );
 }
