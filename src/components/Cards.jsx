@@ -13,8 +13,15 @@ function Cards() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [id, setId] = useState(null);
+  const [vh, setVh] = useState(window.innerHeight * 0.01);
 
-  document.body.style.overflow = id ? "hidden" : "";
+  useEffect(() => {
+    document.body.style.overflow = id ? "hidden" : "";
+    window.onresize = () => {
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      setVh(window.innerHeight * 0.01);
+    };
+  }, [vh, id]);
 
   let character = characters.find((character) => character.id === id);
   useEffect(() => {

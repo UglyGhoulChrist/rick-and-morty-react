@@ -5,11 +5,11 @@
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
+    height: 100vh;
     background: rgba(0, 0, 0, .7);
     overflow: scroll;
-    // display: grid;
-    // place-items: center;
+    display: grid;
+    place-items: center;
 }
 
 // Animated modal Start
@@ -35,9 +35,8 @@
 
 // Animated modal End
 .content {
-
     margin: auto;
-    // width: 100%;
+    width: 100%;
     max-width: 400px;
     background: white;
     border-radius: 0.25rem;
