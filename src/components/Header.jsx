@@ -1,16 +1,16 @@
-import styles from "./Header.module.scss";
+import "./Header.scss";
 
 function Header() {
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
+    <header className="header">
+      <nav className="nav">
         <a
           href="https://rickandmortyapi.com/"
           rel="noreferrer"
           target="_blank"
-          className={styles.link}
+          className="nav__link"
         >
-          © Rick and Morty
+          <h1>© Rick and Morty</h1>
         </a>
       </nav>
     </header>

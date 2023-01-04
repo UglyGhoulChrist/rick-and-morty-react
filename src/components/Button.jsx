@@ -1,8 +1,8 @@
-import styles from "./Button.module.scss";
+import "./Button.scss";
 
-function Button({ text, onClick }) {
+function Button({ text, onClick, active }) {
   return (
-    <button onClick={onClick} className={styles.button}>
+    <button onClick={onClick} className={`button ${active && "button_active"}`}>
       {text}
     </button>
   );

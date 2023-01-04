@@ -1,12 +1,16 @@
 .button {
     border-radius: .2rem;
-    width: fit-content;
+
     padding: .25rem .5rem;
     background-color: #6c757d;
     color: #fff;
     font-size: .875rem;
     transition: all .15s ease-in-out 0s;
     cursor: pointer;
+
+    &_active {
+        background-color: #212529;
+    }
 
     @media (any-hover: hover) {
         &:hover {
