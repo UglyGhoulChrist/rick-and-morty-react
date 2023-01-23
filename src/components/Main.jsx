@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import "./Main.scss";
 import Button from "./Button";
 import Card from "./Card";
@@ -79,8 +80,11 @@ function Main() {
         </div>
       )}
 
-      {/* Модальное окно */}
-      <Modal {...result} show={!result} onClick={() => setResult(null)} />
+      {/* Модальное окно портируется в body*/}
+      {ReactDOM.createPortal(
+        <Modal {...result} show={!result} onClick={() => setResult(null)} />,
+        document.getElementById("modal")
+      )}
 
       {/* Блок кнопок [Назад, Вперёд] */}
       {results && (
